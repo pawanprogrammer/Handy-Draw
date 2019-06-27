@@ -1,0 +1,94 @@
+<!--
+  ~ Copyright (c) 2018. Jay Paulynice (jay.paulynice@gmail.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bootstrap="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff080808"
+        android:orientation="vertical"
+        tools:context=".activity.JigsawActivity">
+
+    <LinearLayout
+            android:id="@+id/chron"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp">
+
+        <Chronometer
+                android:id="@+id/chronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+    </LinearLayout>
+
+    <com.jigdraw.draw.views.JigsawGridView
+            android:id="@+id/jigsaw_grid"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:horizontalSpacing="1dp"
+            android:verticalSpacing="1dp" />
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp">
+
+        <com.beardedhen.androidbootstrap.FontAwesomeText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                bootstrap:fa_icon="fa-pause"
+                android:onClick="playPauseTimer"
+                android:layout_margin="10dp"
+                android:textSize="20sp" />
+
+        <com.beardedhen.androidbootstrap.FontAwesomeText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                bootstrap:fa_icon="fa-refresh"
+                android:layout_margin="10dp"
+                android:textSize="20sp" />
+
+        <com.beardedhen.androidbootstrap.FontAwesomeText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                bootstrap:fa_icon="fa-rotate-left"
+                android:layout_margin="10dp"
+                android:textSize="20sp" />
+
+        <com.beardedhen.androidbootstrap.FontAwesomeText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                bootstrap:fa_icon="fa-rotate-right"
+                android:layout_margin="10dp"
+                android:textSize="20sp" />
+    </LinearLayout>
+</LinearLayout>

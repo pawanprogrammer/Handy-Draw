@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        mavenLocal()
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
+
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.4.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+        mavenLocal()
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
+        google()
+    }
+
+    if (System.env.TRAVIS == 'true') {
+        tasks.withType(GroovyCompile) {
+            groovyOptions.fork = false
+        }
+        tasks.withType(Test) {
+            maxParallelForks = 2
+            minHeapSize = '128m'
+        }
+    }
+}
